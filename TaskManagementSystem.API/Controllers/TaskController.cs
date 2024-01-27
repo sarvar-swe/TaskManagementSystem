@@ -51,8 +51,10 @@ public class TaskController : ControllerBase
             .Take(limit)
             .Select(u => new GetTaskEntityDto(u))
             .ToListAsync();
+
+        var result = new PaginatedList<GetTaskEntityDto>(tasks, tasksQuery.Count(), offset + 1, limit);
         
-        return Ok();
+        return Ok(result);
     }
 
     [HttpGet("{id}")]
