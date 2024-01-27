@@ -1,6 +1,6 @@
 namespace TaskManagementSystem.API.Entity;
 
-public class Task
+public class TaskEntity
 {
     public Guid Id { get; set; }
     public string Title { get; set; }
